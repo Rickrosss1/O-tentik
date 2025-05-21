@@ -1,0 +1,941 @@
+<!DOCTYPE html><<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>O'thentiK Madagascar</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+      
+    <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css">
+
+  <!-- Additional CSS Files   <link rel="stylesheet" type="text/css" href="assets/css/font-awesome.css">
+
+    <link rel="stylesheet" href="assets/css/templatemo-hexashop.css">
+
+    <link rel="stylesheet" href="assets/css/owl-carousel.css">-->
+
+    <link rel="stylesheet" href="assets/css/lightbox.css">
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+    body {
+      line-height: 1.6;
+      color: #333;
+      background-color: #fff;
+    }
+    }
+    header h1 {
+      font-size: 2.5rem;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 1rem 2rem;
+      border-radius: 10px;
+    }
+    
+    .container {
+      padding: 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 3rem;
+      animation: fadeIn 1s ease-in;
+    }
+    h2 {
+      color: #FF7900;
+      margin-bottom: 1rem;
+    }
+    ul {
+      margin-top: 0.5rem;
+      padding-left: 1.2rem;
+    }
+    button {
+      background-color: #FF7900;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      margin: 0.3rem;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #e06800;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    input, textarea {
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%;
+    }
+    footer {
+      background-color: #f5f5f5;
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+  </style>
+  <style>
+  .header{
+  position:relative;
+  overflow:hidden;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  height:70vw;
+  min-height:400px;
+  max-height:750px;
+  min-width:300px;
+  color:#eee;
+  border-radius: 0 0 20px 20px;
+  text-shadow:0 2px 6px #000a
+}
+.header:after{
+  content:"";
+  width:100%;
+  height:100%;
+  position:absolute;
+  bottom:0;
+  left:0;
+  z-index:-1;
+ background: linear-gradient(to bottom, rgba(0,0,0,0.12) 40%,rgba(27,32,48,1) 100%);
+}
+.header:before{
+  content:"";
+  width:100%;
+  height:200%;
+  position:absolute;
+  top:0;
+  left:0;
+    -webkit-backface-visibility: hidden;
+    -webkit-transform: translateZ(0); backface-visibility: hidden;
+  scale(1.0, 1.0);
+    transform: translateZ(0);
+  background:#1B2030 url(https://images.unsplash.com/photo-1731532034431-be28681ed7b7?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3MzQwMzk5NDF8&ixlib=rb-4.0.3&q=85) 50% 0 no-repeat;
+  background-size:100%;
+  background-attachment:fixed;
+  animation: grow 360s  linear 10ms infinite;
+  transition:all 0.4s ease-in-out;
+  z-index:-2
+}
+.header a{
+  color:#eee
+}
+nav{
+  width: 100%;
+  position: fixed;
+  top:50px;
+  text-align:center;
+}
+nav a{
+  font-family: 'Oswald', sans-serif;
+  font-weight:500;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:#cc9900;
+  margin:0 15px;
+  font-size:16px;
+  letter-spacing:1px;
+  position:relative;
+  display:inline-block;
+}
+nav a:before{
+  content:'';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  background:#16151b;
+  top:47%;
+  animation:out 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+}
+nav a:hover:before{
+  animation:in 0.2s cubic-bezier(1, 0, 0.58, 0.97) 1 both;
+
+}
+@keyframes in{
+  0%{
+    width: 0;
+    left:0;
+    right:auto;
+  }
+  100%{
+    left:0;
+    right:auto;
+    width: 100%;
+  }
+}
+@keyframes out{
+  0%{
+    width:100%;
+    left: auto;
+    right: 0;
+  }
+  100%{
+    width: 0;
+    left: auto;
+    right: 0;
+  }
+}
+@keyframes show{
+  0%{
+    opacity:0;
+    transform:translateY(-10px);
+ }
+  100%{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@for $i from 1 through 5 {
+  nav a:nth-child(#{$i}){
+    animation:show .2s #{$i*0.1+1}s ease 1 both;
+  }
+}
+.logo{
+  border:2px solid #fff;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-flex;
+  align-items:center;
+  align-content:center;
+  margin:20px;
+  padding:0px 10px;
+  font-weight:900;
+  font-size:1.1em;
+  line-height:1;
+  box-sizing:border-box;
+  height:40px
+}
+.sides, .info{
+  flex: 0 0 auto;
+  width:50%
+}
+.info{
+  width:100%;
+  padding:15% 10% 0 10%;
+  text-align:center; 
+}
+.author{
+  display:inline-block;
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:url(https://i.imgur.com/uROqgR0.png) center no-repeat;
+  background-size:cover;
+  box-shadow:0 2px 3px rgba(0,0,0,0.3);
+  margin-bottom:3px
+}
+.info h4, .meta{
+  font-size:0.7em
+}
+.meta{
+  font-style:italic;
+}
+@keyframes grow{
+  0% { transform: scale(1) translateY(0px)}
+  50% { transform: scale(1.2) translateY(-400px)}
+}
+.content{  
+  padding:5% 10%;
+  text-align:justify
+}
+.btn{
+  color:#333;
+  border:2px solid;
+  border-radius:3px;
+  text-decoration:none;
+  display:inline-block;
+  padding:5px 10px;
+  font-weight:600
+}
+
+ 
+dialog:not([open]) {
+    pointer-events: none;
+    opacity: 0;
+}
+
+dialog::backdrop {
+  backdrop-filter: blur(0.25rem);
+}
+ 
+dialog a {
+   font-size:1.4em;
+  display:block;
+  text-align:center;
+  margin:10px 15px;
+  padding:5px;
+  font-weight:600;
+  color:#333;
+  &:hover{
+    text-decoration:underline;
+    color:#000
+  }
+}
+
+.twtr{
+  margin-top:100px
+}.btn.twtr:after{content:"\1d54f";padding-left:5px}</style>
+  <script>onst openButton = document.querySelector("#openMenu");
+ 
+const dialog = document.querySelector("dialog");
+
+openButton.addEventListener("click", () => {
+    dialog.showModal();
+});
+ 
+dialog.addEventListener("click", ({ target: dialog }) => {
+    if (dialog.nodeName === "DIALOG") {
+        dialog.close("dismiss");
+    }
+});
+</script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({ top: target.offsetTop - 70, behavior: 'smooth' });
+          }
+        });
+      });
+    });
+  </script>
+  
+</head>
+<body>
+    <div class="header">
+  <div class="sides">
+    <a href="index.html">
+  <img src="https://i.imgur.com/uROqgR0.png" alt="Logo de O’thentiK" style="height: 200px;">
+</a>
+  </div>
+  <div class="sides"> <a href="#" class="menu" id="openMenu"> </a></div>
+  <div class="info">
+  <h4><a href="#category"></a></h4>
+    <h1>“L’essence de Madagascar, à la portée de tous.”</h1>
+  </div>
+</div>
+ <!-- ***** Main Banner Area Start ***** -->
+    <div class="page-heading" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="inner-content">
+                        <span>O’thentiK &amp;  c’est la rencontre entre l’héritage malgache et une vision moderne du commerce équitable et durable...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+     <div>
+<section class="content">
+<p>O’thentiK, c’est la rencontre entre l’héritage malgache et une vision moderne du commerce équitable et durable...</p>
+
+</section>
+</div>
+<div class="back"></div>
+<nav>
+   <a href="#accueil">Accueil</a>
+    <a href="#export">Produits à l’export</a>
+    <a href="#artisanat">Artisanat</a>
+    <a href="#textiles">Textiles</a>
+    <a href="#bio">Produits bio</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+</nav></div>
+            </div>
+
+    <!-- ***** Main Banner Area Start ***** -->
+    <style>
+.main-banner {
+  border-bottom: 3px dotted #eee;
+  padding-top: 160px;
+  padding-bottom: 30px;
+}
+
+.main-banner .left-content .thumb img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-banner .left-content .inner-content {
+  position: absolute;
+  left: 100px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main-banner .left-content .inner-content h4 {
+  color: #fff;
+  margin-top: -10px;
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.main-banner .left-content .inner-content span {
+  font-size: 16px;
+  color: #fff;
+  font-weight: 400;
+  font-style: italic;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.main-banner .right-content .right-first-image {
+  margin-bottom: 28.5px;
+}
+
+.main-banner .right-content .right-first-image .thumb {
+  position: relative;
+  text-align: center;
+}
+
+.main-banner .right-content .right-first-image .thumb img {
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-banner .right-content .right-first-image .thumb .inner-content {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+}
+
+.main-banner .right-content .right-first-image .thumb .inner-content h4 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.main-banner .right-content .right-first-image .thumb .inner-content span {
+  font-size: 16px;
+  color: #fff;
+  font-style: italic;
+}
+
+.main-banner .right-content .right-first-image .thumb .hover-content {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  left: 15px;
+  bottom: 15px;
+  text-align: center;
+  background-color: rgba(42,42,42,.97);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.main-banner .right-content .right-first-image .thumb:hover .hover-content {
+  opacity: 1;
+  visibility: visible;
+}
+
+.main-banner .right-content .right-first-image .thumb .hover-content .inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+.main-banner .right-content .right-first-image .thumb .hover-content h4 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.main-banner .right-content .right-first-image .thumb .hover-content p {
+  color: #fff;
+  padding: 0px 20px;
+  margin-bottom: 20px;
+}
+
+
+
+/*
+---------------------------------------------
+Men
+---------------------------------------------
+*/
+html.lb-disable-scrolling {
+  overflow: hidden;
+  /* Position fixed required for iOS. Just putting overflow: hidden; on the body is not enough. */
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+}
+
+.lightboxOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background-color: black;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=95);
+  opacity: 0.95;
+  display: none;
+}
+
+.lightbox {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  text-align: center;
+  line-height: 0;
+  font-weight: normal;
+}
+
+.lightbox .lb-image {
+  display: block;
+  height: auto;
+  max-width: inherit;
+  max-height: none;
+  border-radius: 5px;
+}
+
+.lightbox a img {
+  border: none;
+}
+
+.lb-outerContainer {
+  position: relative;
+  *zoom: 1;
+  width: 250px;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 4px;
+  background-color: white;
+}
+
+.lb-outerContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.lb-loader {
+  position: absolute;
+  top: 43%;
+  left: 0;
+  height: 25%;
+  width: 100%;
+  text-align: center;
+  line-height: 0;
+}
+
+.lb-cancel {
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+  background: url(../images/loading.gif) no-repeat;
+}
+
+.lb-nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 10;
+}
+
+.lb-container > .nav {
+  left: 0;
+}
+
+.lb-nav a {
+  outline: none;
+  background-image: url('data:image/gif;base64,R0lGODlhAQABAPAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==');
+}
+
+.lb-prev, .lb-next {
+  height: 100%;
+  cursor: pointer;
+  display: block;
+}
+
+.lb-nav a.lb-prev {
+  width: 34%;
+  left: 0;
+  float: left;
+  background: url(../images/prev.png) left 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-prev:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+.lb-nav a.lb-next {
+  width: 64%;
+  right: 0;
+  float: right;
+  background: url(../images/next.png) right 48% no-repeat;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -webkit-transition: opacity 0.6s;
+  -moz-transition: opacity 0.6s;
+  -o-transition: opacity 0.6s;
+  transition: opacity 0.6s;
+}
+
+.lb-nav a.lb-next:hover {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+.lb-dataContainer {
+  margin: 0 auto;
+  padding-top: 5px;
+  *zoom: 1;
+  width: 100%;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+
+.lb-dataContainer:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.lb-data {
+  padding: 0 4px;
+  color: #ccc;
+}
+
+.lb-data .lb-details {
+  margin-top: 10px;
+  width: 85%;
+  float: left;
+  text-align: left;
+  line-height: 1.1em;
+}
+
+.lb-data .lb-caption {
+  font-size: 13px;
+  font-weight: bold;
+  line-height: 1em;
+}
+
+.lb-data .lb-caption a {
+  color: #4ae;
+}
+
+.lb-data .lb-number {
+  display: block;
+  clear: left;
+  padding-bottom: 1em;
+  font-size: 12px;
+  color: #999999;
+}
+
+.lb-data .lb-close {
+  display: block;
+  float: right;
+  width: 30px;
+  height: 30px;
+  margin-top: 15px;
+  background: url(../images/close.png) top right no-repeat;
+  text-align: right;
+  outline: none;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=70);
+  opacity: 0.7;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+.lb-data .lb-close:hover {
+  cursor: pointer;
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+</style>
+
+    <div class="main-banner" id="top">
+      
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="left-content">
+                        <div class="thumb">
+                            <div class="inner-content">
+                                <h4>Produits locaux à l’export</h4>
+                                <span>Produits malgaches pour l’international</span>
+                                
+                            </div>
+                            <img src="assets/images/left-banner-image.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="right-content">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Artisanat authentique</h4>
+                                            <span>Artisanat malgache : culture et savoir-faire</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Artisanat authentique</h4>
+                                               
+                                            </div>
+                                        </div>
+                                        <img src="assets/images/baner-right-image-01.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Créations textiles personnalisées<h4>                         
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Produits mise en boite, raffiné et labellisés</h4>
+                                                <p>Produits bio, naturels et certifiés. Suivant les norme requis , la qualités et emballages en accord.  </p>
+                                                <div class="main-border-button">
+                                                    <a href="#">voir plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="assets/images/baner-right-image-02.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Services personnalisés</h4>
+                                            <span>Services sur mesure</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                 <h4>Services personnalisés</h4>
+                                            <span>Services sur mesure</span>
+                                                <div class="main-border-button">
+                                                    <a href="#">voir plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="assets/images/baner-right-image-03.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="right-first-image">
+                                    <div class="thumb">
+                                        <div class="inner-content">
+                                            <h4>Produits BIO </h4>
+                                            <span>Produits transformés par des artisans malgaches</span>
+                                        </div>
+                                        <div class="hover-content">
+                                            <div class="inner">
+                                                <h4>Produits BIO </h4>
+                                            <span>Produits transformés par des artisans malgaches</span>
+                                                <div class="main-border-button">
+                                                    <a href="#">voir plus</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <img src="assets/images/baner-right-image-04.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ***** Main Banner Area End ***** -->
+
+
+    <section id="export">
+      <h2>Produits malgaches pour l’international</h2>
+      <p>O’thentiK sélectionne des produits typiques de Madagascar...</p>
+      <ul>
+        <li>Épices (vanille, poivre, curcuma…)</li>
+        <li>Produits transformés (confitures, miels, huiles essentielles)</li>
+        <li>Artisanat traditionnel exportable</li>
+        <li>Services : emballage, conditionnement, logistique</li>
+      </ul>
+    </section>
+
+    <section id="artisanat">
+      <h2>Artisanat malgache : culture et savoir-faire</h2>
+      <p>Objets uniques : vannerie, sculpture, textiles, accessoires, déco...</p>
+      <ul>
+        <li>Tapis, paniers, sacs</li>
+        <li>Bois sculpté, objets de décoration</li>
+        <li>Produits faits main sur commande</li>
+        <li>Engagement : commerce équitable, production durable</li>
+      </ul>
+    </section>
+
+    <section id="textiles">
+      <h2>Mode & textile sur mesure</h2>
+      <p>Confection de vêtements professionnels haut de gamme...</p>
+      <ul>
+        <li>Vêtements (tee-shirts, polos, gilets...)</li>
+        <li>Accessoires (casquettes, sacs, tabliers...)</li>
+        <li>Uniformes spécialisés (EPI, blouse...)</li>
+        <li>Articles de sport</li>
+      </ul>
+    </section>
+
+    <section id="bio">
+      <h2>Produits bio, naturels et certifiés</h2>
+      <p>Produits transformés par des artisans malgaches...</p>
+      <ul>
+        <li>Miel bio, confitures artisanales</li>
+        <li>Thés & infusions</li>
+        <li>Produits sans additifs</li>
+        <li>Respect des normes d’hygiène</li>
+      </ul>
+    </section>
+
+    <section id="services">
+      <h2>Services sur mesure</h2>
+      <ul>
+        <li>Commandes en gros et au détail</li>
+        <li>Fournitures pour hôtels, boutiques, entreprises</li>
+        <li>Packs cadeaux personnalisés</li>
+        <li>Vente à distance ou sur site</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>Contactez-nous</h2>
+      <form>
+        <input type="text" placeholder="Nom">
+        <input type="email" placeholder="Email">
+        <textarea rows="5" placeholder="Message"></textarea>
+        <button type="submit">Envoyer</button>
+      </form>
+      <p>Adresse : Malaza Ampitatafika – Antananarivo</p>
+      <p>Email : commercial.lc45@gmail.com | contactlu.madagascar@gmail.com</p>
+      <p>Téléphones : +261 34 75 333 52 / +261 37 37 333 52 / +261 32 05 692 07 / +261 38 38 144 14</p>
+      <p>Showroom : Maroalakely, Manakara</p>
+      <p>Réseaux : @OthentiK_Madagascar (Facebook, Instagram, WhatsApp)</p>
+      <p>Site : www.OthentiK.mg</p>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 O’thentiK Madagascar. Tous droits réservés.</p>
+  </footer>
+    <!-- jQuery -->
+    <script src="assets/js/jquery-2.1.0.min.js"></script>
+
+    <!-- Bootstrap -->
+    <script src="assets/js/popper.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+
+    <!-- Plugins -->
+    <script src="assets/js/owl-carousel.js"></script>
+    <script src="assets/js/accordions.js"></script>
+    <script src="assets/js/datepicker.js"></script>
+    <script src="assets/js/scrollreveal.min.js"></script>
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/slick.js"></script> 
+    <script src="assets/js/lightbox.js"></script> 
+    <script src="assets/js/isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+</body>
+src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <script src="assets/js/imgfix.min.js"></script> 
+    <script src="assets/js/slick.js"></script> 
+    <script src="assets/js/lightbox.js"></script> 
+    <script src="assets/js/isotope.js"></script> 
+    
+    <!-- Global Init -->
+    <script src="assets/js/custom.js"></script>
+
+    <script>
+
+        $(function() {
+            var selectedClass = "";
+            $("p").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#portfolio").fadeTo(50, 0.1);
+                $("#portfolio div").not("."+selectedClass).fadeOut();
+            setTimeout(function() {
+              $("."+selectedClass).fadeIn();
+              $("#portfolio").fadeTo(50, 1);
+            }, 500);
+                
+            });
+        });
+
+    </script>
+
+</body>
+</html>
